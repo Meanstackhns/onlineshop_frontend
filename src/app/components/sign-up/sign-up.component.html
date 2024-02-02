@@ -1,0 +1,182 @@
+<div class="desktop" *ngIf="!isMobileScreen">
+    <div class="login-content signUpForm">
+        <div class="close-btn"><span class="icon btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></span>
+            <div class="loginTxt">Sign up</div>
+            <div class="account">or <a class="loginLink"> login to your account</a></div>
+            <div class="canvasImg">
+                <img class="img-fluid"  imageid="" alt="img renderer"
+                src="{{imageUrl}}/login/Image-login_btpq7r.png">
+            </div>
+            
+        </div>
+        <form [formGroup]="registerForm">
+            <div>
+                <div class="mt-2">
+                    <div class="canvasLogin mb-2">
+                        <input type="tel" name="mobile" id="loginMbl" tabindex="1" maxlength="10" autocomplete="off"
+                            value="" formControlName="mobile_number">
+                        <div class="mNo transform"></div><label class="label " for="mobile">Mobile number</label>
+                    </div>
+                    <span class="error-Msg"
+                        *ngIf="registerValidation && registerForm.controls['mobile_number'].errors?.required">Please
+                        enter mobile number</span>
+                    <span class="error-Msg"
+                        *ngIf="registerValidation && registerForm.controls['mobile_number'].errors?.pattern">Please
+                        enter number only</span>
+                </div>
+                <div class="mt-2">
+                    <div class="canvasLogin mb-2">
+                        <input type="text" name="mobile" id="username" tabindex="1" autocomplete="off" value=""
+                            formControlName="name">
+                        <div class="mNo"></div><label class="label" for="mobile">Name</label>
+                    </div>
+                    <span class="error-Msg"
+                        *ngIf="registerValidation && registerForm.controls['name'].errors?.required">Please enter
+                        username</span>
+                    <span class="error-Msg"
+                        *ngIf="registerValidation && registerForm.controls['name'].errors?.pattern">Please enter
+                        alphabets only</span>
+                </div>
+                <div class="mt-2">
+                    <div class="canvasLogin mb-2">
+                        <input type="email" name="mobile" id="email" tabindex="1" autocomplete="off" value=""
+                            formControlName="email">
+                        <div class="mNo"></div>
+                        <label class="label">Email</label>
+                    </div>
+                    <span class="error-Msg"
+                        *ngIf="registerValidation && registerForm.controls['email'].errors?.pattern">Please enter
+                        valid
+                        email</span>
+                    <span class="error-Msg"
+                        *ngIf="registerValidation && registerForm.controls['email'].errors?.required">Please enter
+                        email</span>
+                </div>
+                <div class="mt-2">
+                    <div class="canvasLogin mb-2">
+                        <input type="password" name="mobile" id="password" tabindex="1" autocomplete="off" value=""
+                            formControlName="password">
+                        <div class="mNo"></div>
+                        <label class="label " for="mobile">password</label>
+                    </div>
+                    <span class="error-Msg"
+                        *ngIf="registerValidation && registerForm.controls['password'].errors?.required">Please
+                        enter password</span>
+                </div>
+            </div>
+            <button class="referalCode btn p-0 pt-3">Have a referral code?</button>
+            <div class="cLoginBtn" (click)="registerSubmit()"><a><input style="display: none;">CONTINUE</a>
+            </div>
+            <div class="terms-and-conditions">By creating an account, I accept the <a class="IBw2l"
+                    href="/terms-and-conditions" style="color: #282c3f;">Terms &amp; Conditions</a> &amp; <a
+                    class="IBw2l" style="color: #282c3f;" href="/privacy-policy">Privacy Policy</a></div>
+        </form>
+    </div>
+</div>
+
+
+
+<!--Mobile View-->
+<div class="mobile_device" *ngIf="isMobileScreen">
+    <div class="main-container">
+        <div class="h-100">
+            <div class="top_container">
+                <button (click)="Back()" class="back_btn">
+                    <img src="{{imageUrl}}/login/back_arrow.png" alt="">
+                </button>
+                <img class="logo" src="{{imageUrl}}/login/logo-removebg-preview.png" alt="">
+                <div class="Login_txt">
+                    <h2 style="font-weight: 600;text-transform: uppercase;" class="m-0">Sign up</h2>
+                    <p class="my-0" style="color:#7e808c;font-weight: 400;font-size: small;margin-right:100px;">Create
+                        an account with the new phone number</p>
+                </div>
+            </div>
+            <div class="Login_container">
+                <form [formGroup]="registerForm" *ngIf="!isOtpSent" autocomplete="off">
+                    <div class="input_box">
+                        <div class="signup_form_group field">
+                            <input formControlName="mobile_number" type="number" class="phone_number signup_form_field"
+                                placeholder="PHONE NUMBER" name="phone" id="phone" />
+                            <label for="phone" class="signup_form__label">PHONE NUMBER</label>
+                            <div class="text-danger err_msg mt-1"
+                                *ngIf="(registerForm.get('mobile_number').touched || registerValidation) && registerForm.get('mobile_number').errors?.required">
+                                Phone Number is required
+                            </div>
+                            <div class="text-danger err_msg mt-1"
+                                *ngIf="(registerForm.get('mobile_number').touched || registerValidation) && registerForm.get('mobile_number').errors?.pattern">
+                                Invalid Phone Number
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Sign Up -->
+                    <div>
+                        <div class="input_box">
+                            <div class="signup_form_group field">
+                                <input formControlName="name" type="input" class="signup_form_field" placeholder="NAME"
+                                    name="name" id='name' />
+                                <label for="name" class="signup_form__label">NAME</label>
+                                <div class="text-danger err_msg mt-1"
+                                    *ngIf="(registerForm.get('name').touched || registerValidation) && registerForm.get('name').errors?.required">
+                                    Name is required
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="input_box">
+                            <div class="signup_form_group field">
+                                <input formControlName="email" type="input" class="signup_form_field"
+                                    placeholder="E-MAIL ADDRESS" name="email" id='email' />
+                                <label for="email" class="signup_form__label">E-MAIL ADDRESS</label>
+                                <div class="text-danger err_msg mt-1"
+                                    *ngIf="(registerForm.get('email').touched || registerValidation) && registerForm.get('email').errors?.required">
+                                    Email is required
+                                </div>
+                                <div class="text-danger err_msg mt-1"
+                                    *ngIf="(registerForm.get('email').touched || registerValidation) && registerForm.get('email').errors?.pattern">
+                                    Invalid Email
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input_box">
+                            <div class="signup_form_group field">
+                                <input formControlName="password" type="password" class="signup_form_field"
+                                    placeholder="PASSWORD" name="password" id='password' />
+                                <label for="password" class="signup_form__label">PASSWORD</label>
+                                <div class="text-danger err_msg mt-1"
+                                    *ngIf="(registerForm.get('password').touched || registerValidation) && registerForm.get('password').errors?.required">
+                                    Password is required
+                                </div>
+                                <div class="text-danger err_msg mt-1"
+                                    *ngIf="(registerForm.get('password').touched || registerValidation) && registerForm.get('password').errors?.pattern">
+                                    Password should contains atleast 8 character
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Continue_Btn_container mt-3">
+                        <button (click)="SignIn()" type="button" class="Continue_btn">
+                            Create Account
+                        </button>
+                    </div>
+                </form>
+
+                <!-- OTP -->
+                <form *ngIf="isOtpSent">
+                    <div class="input_box">
+                        <div class="signup_form_group field">
+                            <input type="input" class="signup_form_field" placeholder="ENTER OTP" name="otp" id='otp' />
+                            <label for="otp" class="signup_form__label">ENTER OTP</label>
+                        </div>
+                    </div>
+                    <div class="Continue_Btn_container mt-3">
+                        <button (click)="VerifyOtp()" type="button" class="Continue_btn">
+                            Verfiy
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
