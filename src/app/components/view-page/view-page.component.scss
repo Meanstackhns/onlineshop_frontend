@@ -1,0 +1,619 @@
+
+$primary : var(--primary);
+
+.mobile_device{
+    position: relative;
+    .view_area{
+        background-color: rgb(255, 255, 255);
+        min-height: 100vh;
+    }
+    .shop_category{
+        padding: 16px;
+    }
+    .orange_bg{
+        background-color: $primary;
+    }
+    .navbar_container{
+       width: 100%;
+        // height: 125px;
+        padding: 14px 16px 0 16px;
+        background-color: $primary ;
+        .logo_img{
+            width: 50px;
+        }
+    }
+    .search_container{
+        padding: 16px 16px;
+        position: sticky;
+        top: 0;
+        z-index: 999;
+    }
+    .search_input_container{
+        text-align: center;
+        position: relative;
+    }
+    .search_input{
+        width: 100%;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        padding: 7px 7px 7px 40px;
+        position: relative;
+    }
+    .search_icon{
+        position: absolute;
+        left: 7px;
+        width: 23px;
+        top: 50%;
+        transform: translate(0,-50%);
+    }
+    .banner_container{
+        padding: 16px;
+
+
+        .carousel_img{
+            border-radius:12px;
+        }
+    }
+
+    .small_banner_img{
+        border-radius: 12px;
+    }
+    .stores_container{
+        // padding: 16px 16px;
+        .restaurant_txt{
+            font-size: 16px;
+            padding: 5px 16px;
+            // font-weight: 800 ;
+        }
+        .store_card_outer{
+            margin: 20px;
+            width:230px;
+            height: 330px;
+            min-height: 270px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+            max-height: 320px;
+            position: relative;
+            background-color: white;
+            border-radius: 15px;
+        }
+        .store_image_container{
+            position: relative;
+            // height: 100%;
+            .store_image{
+               
+                object-fit: contain;
+                width: 100%;
+                border-radius: 10px 10px 0 0 ;
+                
+            }
+        }
+        .store_detail{
+            padding: 10px;
+            width: 100%;
+            height: inherit;
+            .store_name{
+                font-size: 15px;
+                font-weight: 600;
+            }
+            .store_desc{
+                font-size: 13px;
+                height: 20%;
+                overflow-y: scroll;
+            }
+        }
+        .store_btn_container{
+            position: absolute;
+            bottom: 0;
+            padding: 10px;
+            // right: 0;
+
+            .store_btn{
+                padding: 5px 10px;
+                outline: none;
+                border: none;
+                box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+                border-radius: 8px;
+                background-color: $primary;
+                color: white;
+ 
+             }
+        }
+    }
+    .shop_title{
+        font-size: 18px;
+    }
+    .shop_category_container{
+        
+        margin: 25px 0;
+        .category_item{
+            padding: 10px;
+            text-align: center;
+            .category_img{
+                width: 100%;
+                padding: 8px;
+            }
+            .category_name{
+                font-size: 14px;
+            }
+        }
+    }
+    .bottom_bar_container{
+        display: flex;
+        justify-content: space-around;
+        height: 60px;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        
+        z-index: 3;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px -4px 12px;
+        background-color: #ffffff;
+        .nav_items{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        
+        }
+
+        .material-symbols-outlined {
+            font-size: 28px;
+            color: $primary;
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+        .active{
+            font-variation-settings:
+            'FILL' 1,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+       
+    }
+}
+
+
+.desktop{
+  
+ 
+    .navbar_desktop{
+        height: 80px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #e7e7e7;
+        // box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+        background-color: #ffffff;
+        .logo_img{
+            width: 60px;
+
+        }
+        .navbar_nav_item{
+            // padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid #e7e7e7;
+        }
+        .search_bar_container{
+
+            position: relative;
+            
+            .search_bar{
+                width: 300px;
+                outline: none;
+                border: 1px solid #d9d9d9;
+                border-radius: 8px;
+                padding: 8px 40px 8px 10px;
+            }
+            .search_bar::placeholder{
+                font-size: 14px;
+            }
+            .search_icon{
+                position: absolute;
+                right: 0; 
+                color: $primary;
+                top: 50%;
+                transform: translate(-50%,-50%); 
+            }
+        }
+        .material-symbols-outlined {
+            color: $primary;
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    }
+
+    .food_category_container{
+        width: 100%;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #e7e7e7;
+        // box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+        background-color: #ffffff;
+    }
+}
+
+@media only screen and (max-width:400px){
+    .mobile_device{
+        .shop_category{
+            padding: 16px;
+        }
+        .view_area{
+            background-color: rgb(255, 255, 255);
+            min-height: 100vh;
+        }
+        .orange_bg{
+            background-color: $primary;
+        }
+        .navbar_container{
+           width: 100%;
+            // height: 125px;
+            padding: 14px 16px 0 16px;
+            background-color: $primary ;
+            .logo_img{
+                width: 50px;
+            }
+        }
+        .search_container{
+            padding: 16px 16px;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+        .search_input_container{
+            text-align: center;
+            position: relative;
+        }
+        .search_input{
+            width: 100%;
+            border-radius: 5px;
+            outline: none;
+            border: none;
+            padding: 7px 7px 7px 40px;
+            position: relative;
+        }
+        .search_icon{
+            position: absolute;
+            left: 7px;
+            width: 23px;
+            top: 50%;
+            transform: translate(0,-50%);
+        }
+        .banner_container{
+            padding: 16px;
+    
+    
+            .carousel_img{
+                border-radius:12px;
+            }
+        }
+    
+        .small_banner_img{
+            border-radius: 12px;
+        }
+       
+        .stores_container{
+            // padding: 16px 16px;
+            .restaurant_txt{
+                font-size: 18px;
+                padding: 5px 16px;
+                // font-weight: 800 ;
+            }
+            .store_card_outer{
+                width: 230px;
+                height: 330px;
+                min-height: 270px;
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+                max-height: 320px;
+                position: relative;
+                background-color: white;
+                border-radius: 15px;
+            }
+            .store_image_container{
+                position: relative;
+                // height: 100%;
+                .store_image{
+                   
+                    object-fit: contain;
+                    // width:230px;
+                    border-radius: 10px 10px 0 0 ;
+                    
+                }
+            }
+            .store_detail{
+                padding: 10px;
+                width: 100%;
+                height: inherit;
+                .store_name{
+                    font-size: 15px;
+                    font-weight: 600;
+                }
+                .store_desc{
+                    font-size: 13px;
+                    height: 20%;
+                    overflow-y: scroll;
+                }
+            }
+            .store_btn_container{
+                position: absolute;
+                bottom: 0;
+                padding: 10px;
+                right: 0;
+                .store_btn{
+                    padding: 5px 10px;
+                    outline: none;
+                    border: none;
+                    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+                    border-radius: 8px;
+                    background-color: $primary;
+                    color: white;
+                     
+                     
+                 }
+            }
+        }
+    }
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (min-width:400px) and (max-width: 600px) {
+    .mobile_device{
+        .shop_category{
+            padding: 16px;
+        }
+        .view_area{
+            background-color: rgb(255, 255, 255);
+            min-height: 100vh;
+        }
+        .orange_bg{
+            background-color: $primary;
+        }
+        .navbar_container{
+           width: 100%;
+            // height: 125px;
+            padding: 14px 16px 0 16px;
+            background-color: $primary ;
+            .logo_img{
+                width: 50px;
+            }
+        }
+        .search_container{
+            padding: 16px 16px;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+        .search_input_container{
+            text-align: center;
+            position: relative;
+        }
+        .search_input{
+            width: 100%;
+            border-radius: 5px;
+            outline: none;
+            border: none;
+            padding: 7px 7px 7px 40px;
+            position: relative;
+        }
+        .search_icon{
+            position: absolute;
+            left: 7px;
+            width: 23px;
+            top: 50%;
+            transform: translate(0,-50%);
+        }
+        .banner_container{
+            padding: 16px;
+    
+    
+            .carousel_img{
+                border-radius:12px;
+            }
+        }
+    
+        .small_banner_img{
+            border-radius: 12px;
+        }
+       
+        .stores_container{
+            // padding: 16px 16px;
+            .restaurant_txt{
+                font-size: 16px;
+                 padding: 5px 16px;
+                // font-weight: 800 ;
+            }
+            .store_card_outer{
+                width: 240px;
+                height: 330px;
+                min-height: 270px;
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+                max-height: 330px;
+                position: relative;
+                background-color: white;
+                border-radius: 15px;
+            }
+            .store_image_container{
+                position: relative;
+                // height: 100%;
+                .store_image{
+                   
+                    object-fit: contain;
+                    // width:230px;
+                    border-radius: 10px 10px 0 0 ;
+                    
+                }
+            }
+            .store_detail{
+                padding: 10px;
+                width: 100%;
+                height: inherit;
+                .store_name{
+                    font-size: 17px;
+                    font-weight: 600;
+                }
+                .store_desc{
+                    font-size: 14px;
+                    height: 60px;
+                    overflow-y: scroll;
+                }
+            }
+            .store_btn_container{
+                position: absolute;
+                bottom: 0;
+                right: 0;
+    
+                .store_btn{
+                   padding: 5px 10px;
+                   outline: none;
+                   border: none;
+                   box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+                   border-radius: 8px;
+                   background-color: $primary;
+                   color: white;
+                    
+                    
+                }
+            }
+        }
+    }
+    
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+    .mobile_device{
+        .shop_category{
+            padding: 16px;
+        }
+        .view_area{
+            background-color: rgb(255, 255, 255);
+            min-height: 100vh;
+        }
+        .orange_bg{
+            background-color: $primary;
+        }
+        .navbar_container{
+           width: 100%;
+            // height: 125px;
+            padding: 14px 16px 0 16px;
+            background-color: $primary ;
+            .logo_img{
+                width: 50px;
+            }
+        }
+        .search_container{
+            padding: 16px 16px;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+        .search_input_container{
+            text-align: center;
+            position: relative;
+        }
+        .search_input{
+            width: 100%;
+            border-radius: 5px;
+            outline: none;
+            border: none;
+            padding: 7px 7px 7px 40px;
+            position: relative;
+        }
+        .search_icon{
+            position: absolute;
+            left: 7px;
+            width: 23px;
+            top: 50%;
+            transform: translate(0,-50%);
+        }
+        .banner_container{
+            padding: 16px;
+    
+    
+            .carousel_img{
+                border-radius:12px;
+            }
+        }
+    
+        .small_banner_img{
+            border-radius: 12px;
+        }
+       
+        .stores_container{
+            // padding: 16px 16px;
+            .restaurant_txt{
+                font-size: 16px;
+                padding: 5px 16px;
+               
+                // font-weight: 800 ;
+            }
+            .store_card_outer{
+                width: 230px;
+                height:330px;
+                min-height: 270px;
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+                max-height: 400px;
+                position: relative;
+                background-color: white;
+                border-radius: 15px;
+            }
+            .store_image_container{
+                position: relative;
+                // height: 100%;
+                .store_image{
+                   
+                    object-fit: contain;
+                    // width:230px;
+                    border-radius: 10px 10px 0 0 ;
+                    
+                }
+            }
+            .store_detail{
+                padding: 10px;
+                width: 100%;
+                height: inherit;
+                .store_name{
+                    font-size: 17px;
+                    font-weight: 600;
+                }
+                .store_desc{
+                    font-size: 14px;
+                    height: 20%;
+                    overflow-y: scroll;
+                }
+            }
+            .store_btn_container{
+                position: absolute;
+                bottom: 0;
+                right: 0;
+    
+                .store_btn{
+                    padding: 5px 10px;
+                    outline: none;
+                    border: none;
+                    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+                    border-radius: 8px;
+                    background-color: $primary;
+                    color: white;
+                     
+                     
+                 }
+            }
+           
+        }
+    }
+}
+

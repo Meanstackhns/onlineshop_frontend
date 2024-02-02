@@ -1,29 +1,33 @@
 <div class="desktop" *ngIf="!isMobileScreen">
     <div class="container-fluid">
-        <div class="top-content row">
-            <div class="col-xl-6">
-                <div class="topLanding">
-                    <div class="row logo-Div">
-                        <div class="col-4 col-sm-3">
-                            <img src="{{imageUrl}}/login/logo.png" alt="" class="img-fluid">
+        <div class="full-landing-page">
+            <div class="row" id="top-row">
+                <div class="col-6">
+                    <div class="top-content">
+                        <div class="logo-Btn">
+                            <div class="col-4 col-sm-3">
+                                <img src="{{imageUrl}}/login/logo.png" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-8 text-center pt-3 landBtnDiv">
+                                <button (click)="Goto('login')" class="loginBtn pe-5" data-bs-toggle="offcanvas"
+                                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Login</button>
+                                <button (click)="Goto('signup')" class="signUpBtn" data-bs-toggle="offcanvas" data-bs-target="#signUpRight"
+                                    aria-controls="offcanvasRight">Sign up</button>
+                            </div>
                         </div>
-                        <div class="col-8 text-center pt-3 landBtnDiv">
-                            <button class="loginBtn pe-5" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                                aria-controls="offcanvasRight">Login</button>
-                            <button class="signUpBtn" data-bs-toggle="offcanvas" data-bs-target="#signUpRight"
-                                aria-controls="offcanvasRight">Sign up</button>
-                        </div>
-                    </div>
-                    <div class="row ">
-                        <div class="col-12 col-sm-9 foodLocation">
+                        <div class="header">
                             <h1>Hungry?</h1>
                             <h2>Order food from favourite restaurants near you.</h2>
+                        </div>
+                        <div class="location-input">
                             <div class="input-group input-group-lg mt-4">
-                                <input type="text" class="form-control" aria-label="Sizing example input"
+                                <input type="text" class="form-control location-input" aria-label="Sizing example input"
                                     aria-describedby="inputGroup-sizing-lg" placeholder="Enter your delivery location">
                                 <span class="input-group-text">FIND FOOD</span>
                             </div>
-                            <h3 class="popular">POPULAR CITIES IN INDIA</h3>
+                        </div>
+                        <div class="location-Txt">
+                            <h3 class="popular pt-4">POPULAR CITIES IN INDIA</h3>
                             <ul class="cityName">
                                 <li class="grey">Ahmedabad</li>
                                 <li class="dark">Bangalore</li>
@@ -37,56 +41,58 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-6 landLeftImg"></div>
             </div>
-            <div class="col-xl-6 landLeftImg"></div>
-        </div>
-        <div class="bottom-content row">
-            <div class="container">
-                <div class="row">
-                    <div class="text-center col-4 food-facility">
-                        <div class="landFaclity">
-                            <img src="{{imageUrl}}/login/4x_-_No_min_order_x0bxuf.png" alt="" width="100">
-                        </div>
-                        <div class="header pt-3">No Minimum Order</div>
-                        <div class="paragraph pt-2">Order in for yourself or for the group, with no restrictions on
-                            order
-                            value
-                        </div>
-                    </div>
-                    <div class="text-center col-4 food-facility">
-                        <div class="landFaclity">
-                            <img src="{{imageUrl}}/login/4x_Live_order_zzotwy.png" alt="" width="100">
-                        </div>
-                        <div class="header pt-3">Live Order Tracking</div>
-                        <div class="paragraph pt-2">Know where your order is at all times, from the restaurant to your
-                            doorstep
-                        </div>
-                    </div>
-                    <div class="text-center col-4 food-facility">
-                        <div class="landFaclity">
-                            <img src="{{imageUrl}}/login/4x_-_Super_fast_delivery_awv7sn.png" alt="" width="100">
-                        </div>
-                        <div class="header pt-3">Lightning-Fast Delivery</div>
-                        <div class="paragraph pt-2">Experience Swiggy's superfast delivery for food delivered fresh & on
-                            time
+            <div class="row" id="bottom-row">
+                <div class="col-xl-12">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-4 text-center food-facility">
+                                <div class="landFaclity">
+                                    <img src="{{imageUrl}}/login/4x_-_No_min_order_x0bxuf.png" alt="" width="100">
+                                </div>
+                                <div class="header pt-3">No Minimum Order</div>
+                                <div class="paragraph pt-2">Order in for yourself or for the group, with no restrictions
+                                    on order value
+                                </div>
+                            </div>
+                            <div class="col-4 text-center food-facility">
+                                <div class="landFaclity">
+                                    <img src="{{imageUrl}}/login/4x_Live_order_zzotwy.png" alt="" width="100">
+                                </div>
+                                <div class="header pt-3">Live Order Tracking</div>
+                                <div class="paragraph pt-2">Know where your order is at all times, from the restaurant
+                                    to your doorstep
+                                </div>
+                            </div>
+                            <div class="col-4 text-center food-facility">
+                                <div class="landFaclity">
+                                    <img src="{{imageUrl}}/login/4x_-_Super_fast_delivery_awv7sn.png" alt=""
+                                        width="100">
+                                </div>
+                                <div class="header pt-3">Lightning-Fast Delivery</div>
+                                <div class="paragraph pt-2">Experience Swiggy's superfast delivery for food delivered
+                                    fresh & on
+                                    time
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
     <div class="offcanvas offcanvas-end login-canvas" tabindex="-1" id="offcanvasRight"
         aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-body login-body">
-            <app-login> </app-login>
+            <router-outlet *ngIf="LoginClicked"></router-outlet>
         </div>
     </div>
 
     <div class="offcanvas offcanvas-end signUp-canvas" tabindex="-1" id="signUpRight"
         aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-body singUp-body">
-            <app-sign-up></app-sign-up>
+            <router-outlet *ngIf="!LoginClicked"></router-outlet>
         </div>
     </div>
 </div>

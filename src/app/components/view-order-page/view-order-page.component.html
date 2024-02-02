@@ -1,0 +1,66 @@
+<div class="desktop">
+    <div class="container-fluid">
+        <div class="view-order-page">
+            <div class="row header">
+                <div class="col-12">
+                    <nav class="container">
+                        <ul>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="row food-Navbar">
+                <div class="col-12 content">
+                    <nav class="container">
+                        <ul>
+                            <li><img src="{{imgUrl}}/login/logo.png"></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="row food-Menu">
+                <div class="col-12 content">
+                    <nav class="container">
+                        <ul>
+                            <li *ngFor="let i of foodMenu"><i [class]="i.icon+' '+'me-2'"></i>{{i.name}}</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="row food-Navigation">
+                <div class="col-12">
+                    <ol class="breadcrumb container">
+                        <li class="breadcrumb-item">
+                            <span class="pe-3">Home <i class="fa-solid fa-chevron-right"></i></span>
+                            <span class="pe-3">Chicken <i class="fa-solid fa-chevron-right"></i></span>
+                            <span>Chicken Curry Cut (Skin Off) </span>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="row food-list">
+                <div class="container">
+                    <div class="col-6">
+                        <div class="main-image ">
+                            <div *ngFor="let i of foodList">
+                                <img src="{{imgUrl}}\view-order-page\{{i.image}}" alt="" class="img-fluid ">
+                                <p class="m-0"><strong>Customise your product</strong></p>
+                                <p class="rate m-0 pb-2">Starts from {{i.startRate | currency :'INR'}}</p>
+                                <div class="text-justify">
+                                    {{i.description}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="list-image" *ngFor="let i of foodList">
+                            <div *ngFor="let j of i.list">
+                                <h1>{{i.name}}</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,165 @@
+<div *ngIf="isMobileScreen" class="mobile_device">
+    <div class="navbar_container ">
+        <div class="row p-0">
+            <div class="col-12  d-flex align-items-center justify-content-between">
+                <div>
+                    <div class="text-white">
+                        Bangalore/Karnataka
+                    </div>
+                </div>
+                <div class="logo">
+                    <img class="logo_img" src="../../../assets/images/ViewPage/logo-removebg-preview.png" >
+                </div>
+            </div>
+          
+        </div>
+    </div>
+    <div class="orange_bg search_container ">
+        <div class="col-12">
+            <div class="search_input_container">
+                <input class="search_input" type="text">
+                <img class="search_icon" src="../../../assets/images/ViewPage/search.png" alt="">
+            </div>
+        </div>
+    </div>
+
+   <div class="view_area">
+
+    <!-- Banner Area -->
+
+    <div class="banner_container">
+
+        <div class="main_banner mb-3">
+            <!-- Main Banner  -->
+            <swiper [config]="mainBannerConfig">
+                <ng-template  *ngFor="let banner of mainBannerImages" swiperSlide>
+                    <div >
+                     <img src="{{imgAssetsPath}}/ViewPage/{{banner.imageUrl}}" class="carousel_img d-block w-100" alt="...">
+                   </div>
+                </ng-template>
+             </swiper>
+        
+        </div>
+        <!-- Sub Banner -->
+        <swiper [config]="subBannerconfig">
+            <ng-template *ngFor="let subBanner of subBannerImages " swiperSlide>
+                <img class="small_banner_img d-block w-100" src="{{imgAssetsPath}}/ViewPage/{{subBanner.imageUrl}}" alt="">
+            </ng-template>
+           
+        
+       
+      </swiper>
+    </div>
+
+    <!-- Shop Area  -->
+
+    <div class="stores_container py-3">
+        <h5 class="restaurant_txt m-0"><b>Restaurants in Vishakhapatinam</b></h5>
+
+        <swiper [config]="storeConfig">
+           
+            <ng-template *ngFor="let shop of shopData" swiperSlide>
+                <div class="store_card_outer">
+                     <div class="store_image_container">
+                         <img class="store_image" src="{{imgAssetsPath}}/ViewPage/{{shop.imageUrl}}" alt="">
+                         
+                     </div>
+                     <div class="store_detail">
+                        <h6 class="store_name">
+                           {{shop.Shop_Name}}
+                        </h6>
+                        <p class="store_desc">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam eos fugit magnam, a numquam eaque laborum at vitae expedita sint ut repellendus nihil esse fuga! Officiis obcaecati aut error aliquam?
+                        </p>
+                     </div>
+                     <div class="store_btn_container">
+                        <button class="store_btn">
+                           View Shop
+                         </button>
+                     </div>
+                </div>
+             </ng-template>
+            
+      </swiper>
+    </div>
+
+    <!-- Category Area -->
+
+    <div class="shop_category">
+        <div class="shop_by_category">
+            <h2 class="shop_title">Shop by Category</h2>
+            <div class="shop_category_container row">
+                <div *ngFor="let category of categoryData" class="category_item col-4">
+                    <img class="category_img" src="{{imgAssetsPath}}/Shop_Category/{{category.imageUrl}}" alt="">
+                    <p  class="category_name">{{category.category_Name}}</p>
+                </div>
+               
+        
+            </div>
+        </div>
+   </div>
+   </div>
+ 
+   <!-- Bottom Bar -->
+   <div class="bottom_bar_container">
+        <div class="nav_items">
+            <span class="active home_icon material-symbols-outlined">
+                home
+            </span>
+        </div>
+        
+        <div class="nav_items">
+            <span class="favorite_icon material-symbols-outlined">
+                favorite
+                </span>
+        </div>
+        <div class="nav_items">
+            <span class="material-symbols-outlined">
+                category
+                </span>
+        </div>
+        <div class="nav_items">
+            <span class="material-symbols-outlined">
+                local_mall
+                </span>
+        </div>
+        <div class="nav_items">
+            <span class="material-symbols-outlined">
+                account_circle
+                </span>
+        </div>
+   </div>
+</div>
+<div *ngIf="!isMobileScreen" class="desktop">
+    <div class="container">
+        <div class="navbar_desktop">
+           <div class="d-flex align-items-center">
+            <div class="logo me-5">
+                <img class="logo_img" src="../../../assets/images/Login/logo-removebg-preview.png" alt="">
+            </div>
+            <div class="search_bar_container">
+                <input placeholder="Search from our 100% fresh products" class="search_bar" type="text" name="" id="">
+                <span class="search_icon material-symbols-outlined">
+                    search
+                </span>
+            </div>  
+           </div>
+
+           <div class="d-flex">
+                <div class="account me-3 navbar_nav_item">
+                    <span class="material-symbols-outlined">
+                        person
+                    </span>
+                </div>
+                <div class="account ms-3 navbar_nav_item">
+                    <span class="material-symbols-outlined">
+                        local_mall
+                        </span>
+                </div>
+           </div>
+        </div>    
+        <div class="food_category_container">
+
+        </div>
+    </div>
+</div>

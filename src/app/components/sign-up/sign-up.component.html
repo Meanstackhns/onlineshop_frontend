@@ -2,20 +2,18 @@
     <div class="login-content signUpForm">
         <div class="close-btn"><span class="icon btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></span>
             <div class="loginTxt">Sign up</div>
-            <div class="account">or <a class="loginLink"> login to your account</a></div>
+            <div class="account">or <a class="loginLink" (click)="goToLogin()"> login to your account</a></div>
             <div class="canvasImg">
-                <img class="img-fluid"  imageid="" alt="img renderer"
-                src="{{imageUrl}}/login/Image-login_btpq7r.png">
+                <img class="img-fluid" imageid="" alt="img renderer" src="{{imageUrl}}/login/Image-login_btpq7r.png">
             </div>
-            
+
         </div>
         <form [formGroup]="registerForm">
             <div>
                 <div class="mt-2">
                     <div class="canvasLogin mb-2">
                         <input type="tel" name="mobile" id="loginMbl" tabindex="1" maxlength="10" autocomplete="off"
-                            value="" formControlName="mobile_number">
-                        <div class="mNo transform"></div><label class="label " for="mobile">Mobile number</label>
+                            value="" formControlName="mobile_number" placeholder="Mobile Number">
                     </div>
                     <span class="error-Msg"
                         *ngIf="registerValidation && registerForm.controls['mobile_number'].errors?.required">Please
@@ -27,8 +25,7 @@
                 <div class="mt-2">
                     <div class="canvasLogin mb-2">
                         <input type="text" name="mobile" id="username" tabindex="1" autocomplete="off" value=""
-                            formControlName="name">
-                        <div class="mNo"></div><label class="label" for="mobile">Name</label>
+                            placeholder="Name" formControlName="name">
                     </div>
                     <span class="error-Msg"
                         *ngIf="registerValidation && registerForm.controls['name'].errors?.required">Please enter
@@ -40,14 +37,12 @@
                 <div class="mt-2">
                     <div class="canvasLogin mb-2">
                         <input type="email" name="mobile" id="email" tabindex="1" autocomplete="off" value=""
-                            formControlName="email">
+                            formControlName="email" placeholder="Email">
                         <div class="mNo"></div>
-                        <label class="label">Email</label>
                     </div>
                     <span class="error-Msg"
                         *ngIf="registerValidation && registerForm.controls['email'].errors?.pattern">Please enter
-                        valid
-                        email</span>
+                        valid email</span>
                     <span class="error-Msg"
                         *ngIf="registerValidation && registerForm.controls['email'].errors?.required">Please enter
                         email</span>
@@ -55,9 +50,9 @@
                 <div class="mt-2">
                     <div class="canvasLogin mb-2">
                         <input type="password" name="mobile" id="password" tabindex="1" autocomplete="off" value=""
-                            formControlName="password">
+                            formControlName="password" placeholder="Password">
                         <div class="mNo"></div>
-                        <label class="label " for="mobile">password</label>
+                        <!-- <label class="label " for="mobile">password</label> -->
                     </div>
                     <span class="error-Msg"
                         *ngIf="registerValidation && registerForm.controls['password'].errors?.required">Please
@@ -175,7 +170,6 @@
                         </button>
                     </div>
                 </form>
-
             </div>
         </div>
     </div>

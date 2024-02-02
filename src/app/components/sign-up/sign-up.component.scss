@@ -2,45 +2,52 @@
 
 
 $light-grey : var(--light-grey);
-$primary-orange : var(--primary-orange);
-.main-container{
+$primary-orange : var(--primary);
+
+.main-container {
     background-color: #ffffff;
     min-height: 100vh;
 }
-.err_msg{
-  font-size: 12px;
+
+.err_msg {
+    font-size: 12px;
 }
 
-.top_container{
+.top_container {
     position: relative;
     height: 170px;
-    background-color:rgba(211,219,234,.3);
+    background-color: rgba(211, 219, 234, .3);
     padding: 18px;
 }
-.logo{
+
+.logo {
     position: absolute;
     right: 20px;
     bottom: 10px;
 }
-.back_btn{
-  padding: 0;
-  margin: 0;
-  outline: none;
-  border: none;
-  background-color: transparent;
+
+.back_btn {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: none;
+    background-color: transparent;
 }
-.Login_txt{
+
+.Login_txt {
     position: absolute;
     // left: 10px;
     bottom: 15px;
 }
-.Login_container{
-    margin-top : 5px;
+
+.Login_container {
+    margin-top: 5px;
     padding: 16px
 }
 
-.input_box{
+.input_box {
     height: 70px;
+
     // margin: 20px 0 10px 0;
     .signup_form_group {
         position: relative;
@@ -48,9 +55,9 @@ $primary-orange : var(--primary-orange);
         margin-top: 10px;
         width: 100%;
         margin-bottom: 20px;
-      }
-      
-      .signup_form_field {
+    }
+
+    .signup_form_field {
         font-family: inherit;
         width: 100%;
         border: 0;
@@ -61,54 +68,61 @@ $primary-orange : var(--primary-orange);
         padding: 7px 0;
         background: transparent;
         transition: border-color 0.2s;
-      
+
         &::placeholder {
-          color: transparent;
+            color: transparent;
         }
-      
-        &:placeholder-shown ~ .signup_form__label {
+
+        &:placeholder-shown~.signup_form__label {
             font-size: 14px;
             top: 20px;
-          }
-      }
-      
-      .signup_form__label {
+        }
+    }
+
+    .signup_form__label {
         position: absolute;
         top: -10px;
         display: block;
         transition: 0.2s;
         font-size: 14px;
         color: #7e808c;
-      }
-      
-      .signup_form_field:focus {
-        ~ .signup_form__label {
-          position: absolute;
-          top: -10px;
-          display: block;
-          color: #7e808c;
-          transition: 0.2s;
-          font-size: 12px;
-        //   font-weight:700;    
+    }
+
+    .signup_form_field:focus {
+        ~.signup_form__label {
+            position: absolute;
+            top: -10px;
+            display: block;
+            color: #7e808c;
+            transition: 0.2s;
+            font-size: 12px;
+            //   font-weight:700;    
         }
-       
-        padding-bottom: 6px;  
+
+        padding-bottom: 6px;
         // font-weight: 700;
-       
-      
+
+
         border-image-slice: 1;
-      }
-      /* reset input */
-      .signup_form_field{
-        &:required,&:invalid { box-shadow:none; }
-      }
+    }
+
+    /* reset input */
+    .signup_form_field {
+
+        &:required,
+        &:invalid {
+            box-shadow: none;
+        }
+    }
 }
-.country_Code{
-  position: absolute;
-  top: 17px;
-  opacity: 0;
+
+.country_Code {
+    position: absolute;
+    top: 17px;
+    opacity: 0;
 }
-.Continue_btn{
+
+.Continue_btn {
     width: 100%;
     padding: 10px;
     background-color: $primary-orange ;
@@ -123,193 +137,8 @@ $primary-orange : var(--primary-orange);
 //DESKTOP
 
 .desktop {
-    .container-fluid {
-        overflow: hidden;
-        padding: 0;
-        margin: 0;
-        font-family: ProximaNova, arial, Helvetica Neue, sans-serif;
-
-        .top-content {
-            height: 60vh;
-
-            .topLanding {
-                padding-left: 20%;
-                padding-top: 5%;
-
-                .landBtnDiv {
-                    .signUpBtn {
-                        height: 40px;
-                        width: auto;
-                        padding: 10px;
-                        background: #000;
-                        color: #fff;
-                        border: none;
-                    }
-
-                    .loginBtn {
-                        border: none;
-                        background: none;
-                    }
-
-                    .loginBtn:focus-visible {
-                        outline: 0 !important;
-                    }
-
-                    .loginBtn:hover {
-                        color: #FB8B24 !important;
-                    }
-
-                    .loginBtn:active {
-                        color: #FB8B24 !important;
-                    }
-
-                    button {
-                        font-size: 16px;
-                        font-weight: 600;
-                    }
-                }
-
-                h1 {
-                    margin-top: 40px;
-                    margin-bottom: 0;
-                    font-size: 40px;
-                    font-weight: 600;
-                    letter-spacing: -.45px;
-                }
-
-                h2 {
-                    font-size: 24px;
-                    font-weight: 300;
-                    line-height: 30px;
-                    color: #686b78;
-                }
-
-                .cityName {
-                    list-style: none;
-                    padding-left: 0;
-
-                    .dark {
-                        color: #93959f;
-                    }
-
-                    li {
-                        display: inline-block;
-                        font-weight: 600;
-                        font-size: 16px;
-                        margin-right: 8px;
-                        color: #686b78;
-                        line-height: 1.5;
-                        letter-spacing: -.3px;
-                    }
-                }
-
-                .popular {
-                    font-weight: 400;
-                    font-size: 15px;
-                    color: #a9abb2;
-                    margin: 30px 0 10px;
-                    letter-spacing: -.2px;
-                    text-transform: uppercase;
-
-                }
-
-                .locateMe {
-                    position: absolute;
-                    right: 1230px;
-                    top: 283px;
-                    padding: 12px 10px;
-                    font-weight: 500;
-                    font-size: 14px;
-                    cursor: pointer;
-                    letter-spacing: -.35px;
-                }
-
-                .input-group {
-                    width: 89%;
-
-                    input {
-                        border-radius: 0;
-                        font-size: 18px;
-                        font-weight: 500;
-                    }
-
-                    input:focus {
-                        border-color: #fc8019;
-                        box-shadow: none;
-                    }
-
-                    input::after {
-                        content: 'locate Me';
-                    }
-
-                    input::placeholder {
-                        color: #686b78;
-                        font-size: 18px;
-                        font-weight: 500;
-                        font-size: 15px;
-                        word-wrap: normal;
-                    }
-
-                    .input-group-text {
-                        border-radius: 0;
-                        padding: 15px 30px;
-                        background-color: #FB8B24;
-                        font-size: 16px;
-                        font-weight: 700;
-                        color: #fff;
-                    }
-                }
-            }
-
-            .landLeftImg {
-                background-image: url('/assets/images/login/Lunch1_vlksgq.png');
-                z-index: -1;
-                background-repeat: no-repeat;
-                max-width: 100%;
-                height: auto;
-                background-size: cover;
-                background-position: 100%;
-                background-color: hsla(26, 5%, 70%, .2);
-            }
-        }
-
-        .bottom-content {
-            height: 40vh;
-            background-color: #36454F;
-            padding: 0 20px;
-            color: #fff;
-
-            .container {
-                .landFaclity {
-                    height: 230px;
-                    text-align: center;
-
-                    img {
-                        height: 100%;
-                    }
-                }
-
-                .header {
-                    font-size: 20px;
-                    font-weight: 600;
-                    margin-top: 0;
-                }
-
-                .paragraph {
-                    color: #4e738c;
-                    font-size: 15px;
-                    // margin-top: 10px;
-                    line-height: 1.3;
-                }
-            }
-        }
-    }
-
     .login-content {
-        // padding-left: 40px;
-        // padding-right: 352px;
         width: 406px;
-
 
         .close-btn {
             position: relative;
@@ -379,7 +208,6 @@ $primary-orange : var(--primary-orange);
             font-size: 17px;
             margin: 0;
             padding: 0 20px;
-            padding-top: 22px;
             font-weight: 500;
         }
 
@@ -464,242 +292,6 @@ $primary-orange : var(--primary-orange);
 
         a {
             text-decoration: none;
-        }
-    }
-
-    // }
-
-    @media (width <=700px) and (width >=600px) {
-        .topLanding {
-            padding-top: 14% !important;
-            padding-left: 10% !important;
-
-            h1 {
-                margin-top: 20px !important;
-                font-size: 20px !important;
-            }
-
-            h2 {
-                font-size: 15px !important;
-                line-height: 25px !important;
-            }
-
-            .input-group {
-                width: 136% !important;
-            }
-
-            .input-group-text {
-                padding: 11px 4px !important;
-            }
-
-        }
-
-        .header {
-            font-size: 14px !important;
-        }
-
-        .paragraph {
-            font-size: 12px !important;
-        }
-
-        .offcanvas-end {
-            max-width: 500px !important;
-            min-width: 500px !important;
-        }
-    }
-
-    @media (width <=768px) and (width >=700px) {
-        .topLanding {
-            padding-top: 14% !important;
-            padding-left: 10% !important;
-
-            h1 {
-                margin-top: 20px !important;
-                font-size: 20px !important;
-            }
-
-            h2 {
-                font-size: 15px !important;
-                line-height: 25px !important;
-            }
-
-            .input-group {
-                width: 136% !important;
-            }
-
-            .input-group-text {
-                padding: 11px 4px !important;
-            }
-
-        }
-
-        .header {
-            font-size: 14px !important;
-        }
-
-        .paragraph {
-            font-size: 12px !important;
-        }
-
-        .offcanvas-end {
-            max-width: 500px !important;
-            min-width: 500px !important;
-        }
-    }
-
-    @media (max-width: 992px) and (min-width:768px) {
-        .landFaclity {
-            height: 190px !important;
-        }
-
-        .header {
-            font-size: 15px !important;
-            font-weight: 600;
-            margin-top: 0;
-        }
-
-        .topLanding {
-            padding-top: 5% !important;
-            padding-left: 7% !important;
-
-            .input-group {
-                width: 135% !important;
-            }
-
-            .input-group-text {
-                padding: 12px 10px !important;
-            }
-
-            h2 {
-                font-size: 20px !important;
-                line-height: 25px !important;
-                padding-top: 10px !important;
-            }
-        }
-
-        .offcanvas-end {
-            max-width: 600px !important;
-            min-width: 600px !important;
-            overflow-x: hidden !important;
-
-            .login-content {
-                overflow: hidden !important;
-            }
-        }
-    }
-
-    @media (max-width: 1024px) and (max-height:768px) {
-        .landFaclity {
-            height: 190px !important;
-        }
-
-        .topLanding {
-            .input-group {
-                margin-top: 1rem !important;
-                width: 127% !important;
-            }
-        }
-    }
-
-    @media (max-width: 1024px) and (max-height:600px) {
-        .topLanding {
-            h1 {
-                margin-top: 16px !important;
-                font-size: 20px !important;
-            }
-
-            h2 {
-                font-size: 15px !important;
-                line-height: 25px !important;
-            }
-
-            .popular {
-                margin-top: 17px !important;
-            }
-
-            .input-group {
-                margin-top: 1rem !important;
-                width: 127% !important;
-            }
-
-            .cityName {
-                li {
-                    font-size: 15px !important;
-                }
-            }
-        }
-
-        .landFaclity {
-            height: 160px !important;
-        }
-
-        .header {
-            font-size: 15px !important;
-            font-weight: 600;
-            margin-top: 0;
-        }
-
-        .paragraph {
-            font-size: 13px !important;
-        }
-    }
-
-    @media (max-width: 768px) and (max-height:768px) {
-        .topLanding {
-            .landBtnDiv {
-                padding-top: 0 !important;
-
-                .signUpBtn {
-                    padding: 5px !important;
-                }
-            }
-        }
-    }
-
-    @media (max-width: 720px) and (max-height:540px) {
-        .topLanding {
-            padding-top: 4% !important;
-
-            h1 {
-                margin-top: 11px !important;
-                font-size: 17px !important;
-            }
-
-            h2 {
-                font-size: 15px !important;
-                line-height: 20px !important;
-                padding-top: 5px !important;
-
-            }
-
-            .input-group-text {
-                padding: 8px 4px !important;
-            }
-        }
-
-        .popular {
-            margin: 0px 0 3px;
-        }
-
-        .offcanvas-end {
-            max-width: 500px !important;
-            min-width: 500px !important;
-        }
-    }
-
-    @media (max-width:1400px) and (min-width:1100px) {
-        .topLanding {
-            .input-group {
-                width: 130% !important;
-            }
-        }
-    }
-
-    @media (max-width:1100px) and (min-width:992px) {
-        .topLanding {
-            .input-group {
-                width: 130% !important;
-            }
         }
     }
 }

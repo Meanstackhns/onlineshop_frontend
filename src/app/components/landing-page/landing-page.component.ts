@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { environment } from 'src/environment/environment';
 declare let $: any;
 @Component({
@@ -15,8 +16,9 @@ export class LandingPageComponent implements OnInit {
   isAlreadyUser = true;
   buttonText = "Continue";
   isOtpSent = false;
+  LoginClicked = false
   Submitted = false;
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,private router:Router) {
 
   }
   @HostListener('window:resize', ['$event'])
@@ -56,6 +58,19 @@ export class LandingPageComponent implements OnInit {
     }
     else {
       this.isMobileScreen = false
+    }
+
+  }
+  Goto(value:any){
+    if(value=='login'){
+      this.LoginClicked = true
+      this.router.navigate(['/landing-page/login'])
+    }
+    if(value == 'signup'){
+      console.log('SignUp');
+      this.LoginClicked = false
+      console.log(this.LoginClicked);
+      this.router.navigate(['/landing-page/register']) 
     }
 
   }

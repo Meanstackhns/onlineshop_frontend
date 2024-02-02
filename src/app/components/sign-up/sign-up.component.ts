@@ -12,12 +12,12 @@ export class SignUpComponent implements OnInit {
   registerForm: FormBuilder | any;
   registerValidation: any;
   imageUrl: any;
-  isOtpSent     = false;
-  buttonText    = "Continue";
-  Submitted     = false
+  isOtpSent = false;
+  buttonText = "Continue";
+  Submitted = false
   isMobileScreen = false
-  screenWidth : any
-  constructor(private fb: FormBuilder,private router:Router) {
+  screenWidth: any
+  constructor(private fb: FormBuilder, private router: Router) {
 
   }
   ngAfterViewInit() {
@@ -32,19 +32,19 @@ export class SignUpComponent implements OnInit {
       $('.label').addClass('addTrans')
     })
   }
-  @HostListener('window:resize', ['$event'])  
-  onResize(event: any) {  
-    this.screenWidth = window.innerWidth;  
-    
-    if(this.screenWidth < 600){
-        this.isMobileScreen = true
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.screenWidth = window.innerWidth;
+
+    if (this.screenWidth < 768) {
+      this.isMobileScreen = true
     }
-    else{
-        this.isMobileScreen = false
-        this.router.navigateByUrl('landing-page')
+    else {
+      this.isMobileScreen = false
+      this.router.navigateByUrl('landing-page')
     }
-    
-  } 
+
+  }
   ngOnInit() {
     this.imageUrl = environment.IMG_URL
     this.registerForm = this.fb.group({
@@ -53,14 +53,14 @@ export class SignUpComponent implements OnInit {
       email: [null, [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
       password: [null, [Validators.required]]
     })
-    this.screenWidth = window.innerWidth;  
-   
-    if(this.screenWidth < 600){
-        this.isMobileScreen = true
+    this.screenWidth = window.innerWidth;
+
+    if (this.screenWidth < 768) {
+      this.isMobileScreen = true
     }
-    else{
+    else {
       this.isMobileScreen = false;
-      this.router.navigateByUrl('landing-page')
+      this.router.navigateByUrl('/landing-page/register')
     }
   }
   registerSubmit() {
@@ -77,16 +77,18 @@ export class SignUpComponent implements OnInit {
     if (this.registerForm.invalid) {
       return
     }
-    else{
+    else {
       this.isOtpSent = true
     }
     this.buttonText = "Verify"
-    
+
   }
   VerifyOtp() {
-    // this.isOtpSent = true
   }
   Back() {
     this.router.navigate(['/login'])
+  }
+  goToLogin(){
+    // this.router.navigateByUrl('/landing-page/login')
   }
 }

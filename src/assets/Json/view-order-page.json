@@ -1,0 +1,71 @@
+{
+    "foodNavbar": [
+        {
+            "id": 1,
+            "name": "1800-313-3302",
+            "icon": "fa-solid fa-phone"
+        },
+        {
+            "id": 2,
+            "name": "customercare@hnsOnline.com",
+            "icon": "fa-solid fa-envelope"
+        }
+    ],
+    "foodNavbar1": [
+        {
+            "id": 3,
+            "list": [
+                "Certificates",
+                "Why us",
+                "Newsroom",
+                "Sell-With-Us"
+            ],
+            "icon": ""
+        },
+        {
+            "id": 4,
+            "name": "Bangalore/Karnataka",
+            "icon": "fa-solid fa-location-dot",
+            "icon1": "fa-solid fa-chevron-down"
+        }
+    ],
+    "foodMenu": [
+        {
+            "id": 1,
+            "name": "Chicken",
+            "icon": ""
+        },
+        {
+            "id": 2,
+            "name": "Mutton",
+            "icon": ""
+        },
+        {
+            "id": 3,
+            "name": "Fish & SeaFood",
+            "icon": "fa-solid fa-fish"
+        }
+    ],
+    "foodList": [
+        {
+            "id": 1,
+            "image": "chicken.png",
+            "name": "Chicken Curry Cut (Skin Off)",
+            "description": "As most of the fat content in a chicken is stored in its skin, our chicken curry cut without the skin is a healthy alternative. A great source of lean, low-fat protein that is bursting with flavour and is ready to fall off the bone as soon as you cook it. Ideal for: An evergreen cut, you can make anything from Chettinadu, Mughlai, Punjabi, Tandoori to Chinese cuisine, with our chicken curry cut. Freshness Indicator: The chicken should be pink in colour and cold to touch. Tip: It is very easy to overcook this cut, leaving it dry and rubbery, so watch like a hawk while you are cooking.",
+            "startRate": 139,
+            "list": [
+                {
+                    "id": 1,
+                    "name": "Regular - Curry Cut (Skin Off) With 1Pc",
+                    "liver": "Liver",
+                    "pieces": "16 -18 Pieces",
+                    "mrp": 149,
+                    "elite": 139,
+                    "weight": "480 - 500 Gms",
+                    "quantity": "3 - 4",
+                    "qPiece": "16-18"
+                }
+            ]
+        }
+    ]
+}
