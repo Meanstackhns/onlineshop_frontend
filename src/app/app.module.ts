@@ -14,7 +14,8 @@ import { CryptoService } from './core/service/crypto/crypto.service';
 import { HttpService } from './core/service/http/http.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ViewOrderPageComponent } from './components/view-order-page/view-order-page.component';
-import {SwiperModule} from 'swiper/angular'
+import {SwiperModule} from 'swiper/angular';
+import { AddToCartComponent } from './components/add-to-cart/add-to-cart.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import {SwiperModule} from 'swiper/angular'
     LoginComponent,
     SignUpComponent,
     ViewPageComponent,
-    ViewOrderPageComponent
+    ViewOrderPageComponent,
+    AddToCartComponent
   ],
   imports: [
     BrowserModule,

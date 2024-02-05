@@ -1,0 +1,54 @@
+.desktop {
+    .container-fluid {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+
+        .card {
+            box-shadow: 0 15px 40px -20px rgba(40, 44, 63, .15);
+            height: 80px;
+            background: #fff;
+
+            .cardNav {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-between;
+
+                .cardList {
+                    list-style-type: none;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    align-items: baseline;
+                    align-content: center;
+                    width: 50%;
+                    justify-content: center;
+
+                    li {
+                        font-size: 16px;
+                        font-weight: 500;
+                    }
+
+                    .checkOut {
+                        font-size: 14px;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+
+        .addToCart {
+            min-height: 91.3vh;
+            overflow-x: hidden;
+            height: 0%;
+            overflow-y: auto;
+            background: #e9ecee;
+            .cartDetail{
+                background: #ffffff;
+                border-radius: 0;
+                border-color: #ffffff;
+            }
+        }
+    }
+}

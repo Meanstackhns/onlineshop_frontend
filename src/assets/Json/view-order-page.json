@@ -33,17 +33,22 @@
         {
             "id": 1,
             "name": "Chicken",
-            "icon": ""
+            "icon": "Chicken_Icon.png"
         },
         {
             "id": 2,
             "name": "Mutton",
-            "icon": ""
+            "icon": "Mutton_Icon.png"
         },
         {
             "id": 3,
             "name": "Fish & SeaFood",
-            "icon": "fa-solid fa-fish"
+            "icon": "Fish_Icon.png"
+        },
+        {
+            "id": 4,
+            "name": "SeaFood",
+            "icon": "Fillet_Icon.png"
         }
     ],
     "foodList": [
@@ -53,17 +58,99 @@
             "name": "Chicken Curry Cut (Skin Off)",
             "description": "As most of the fat content in a chicken is stored in its skin, our chicken curry cut without the skin is a healthy alternative. A great source of lean, low-fat protein that is bursting with flavour and is ready to fall off the bone as soon as you cook it. Ideal for: An evergreen cut, you can make anything from Chettinadu, Mughlai, Punjabi, Tandoori to Chinese cuisine, with our chicken curry cut. Freshness Indicator: The chicken should be pink in colour and cold to touch. Tip: It is very easy to overcook this cut, leaving it dry and rubbery, so watch like a hawk while you are cooking.",
             "startRate": 139,
+            "menuName":"Chicken",
+            "foodMenuId":1,
             "list": [
                 {
                     "id": 1,
-                    "name": "Regular - Curry Cut (Skin Off) With 1Pc",
+                    "name": "Regular - Curry Cut (Skin Off) With 1Pc Liver",
                     "liver": "Liver",
                     "pieces": "16 -18 Pieces",
                     "mrp": 149,
                     "elite": 139,
                     "weight": "480 - 500 Gms",
                     "quantity": "3 - 4",
-                    "qPiece": "16-18"
+                    "qPiece": "16-18",
+                    "image": "chickenList.png"
+                },
+                {
+                    "id": 2,
+                    "name": "Regular - Curry Cut (Skin Off) Without Liver",
+                    "liver": "Liver",
+                    "pieces": "16 -18 Pieces",
+                    "mrp": 149,
+                    "elite": 139,
+                    "weight": "480 - 500 Gms",
+                    "quantity": "3 - 4",
+                    "qPiece": "16-18",
+                    "image": "chicken.png"
+                },
+                {
+                    "id": 3,
+                    "name": "Regular - Curry Cut (Skin Off)-1Kg",
+                    "liver": "Liver",
+                    "pieces": "16 -18 Pieces",
+                    "mrp": 149,
+                    "elite": 139,
+                    "weight": "480 - 500 Gms",
+                    "quantity": "3 - 4",
+                    "qPiece": "16-18",
+                    "image": "chicken.png"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "image": "chicken.png",
+            "name": "Prawn / Eral",
+            "description": "Sweet, tender and succulent, our prawns are dressed in their best for you. Wonderfully plump, with a firm texture and a crunchy bite, these beauties are high in protein, omega 3 fatty acids and low in calories.",
+            "startRate": 199,
+            "menuName":"sea Food",
+            "foodMenuId":4,
+            "list": [
+                {
+                    "id": 1,
+                    "name": "Prawns Medium - Deshelled & Deveined",
+                    "pieces": "35-45 Pieces",
+                    "mrp": 149,
+                    "elite": 139,
+                    "weight": "480 - 500 Gms",
+                    "quantity": "3 - 4",
+                    "qPiece": "16-18",
+                    "image": "chickenList.png"
+                },
+                {
+                    "id": 2,
+                    "name": "Prawns Medium - Deshelled",
+                    "pieces": "35-45 Pieces Deshelled",
+                    "mrp": 149,
+                    "elite": 139,
+                    "weight": "480 - 500 Gms",
+                    "quantity": "3 - 4",
+                    "qPiece": "16-18",
+                    "image": "chicken.png"
+                },
+                {
+                    "id": 3,
+                    "name": "Prawns Medium - Deshelled [1 KG]",
+                    "pieces": "70-90 Pieces",
+                    "mrp": 149,
+                    "elite": 139,
+                    "weight": "480 - 500 Gms",
+                    "quantity": "3 - 4",
+                    "qPiece": "16-18",
+                    "image": "chicken.png"
+                },
+                {
+                    "id": 3,
+                    "name": "Prawns Small - Deshelled",
+                    "pieces": "45-60 Pieces",
+                    "mrp": 149,
+                    "elite": 139,
+                    "weight": "480 - 500 Gms",
+                    "quantity": "3 - 4",
+                    "qPiece": "16-18",
+                    "image": "chicken.png"
                 }
             ]
         }

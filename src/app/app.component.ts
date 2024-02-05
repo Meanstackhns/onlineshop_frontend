@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
   themeJson(){
     this.httpSevice.jsonGet(apiConstant.themeColor).subscribe((res: any) => {
       console.log(res);
-      this.themeColor = res.primary
+      this.themeColor = res.themeColor
       this.ChangeThemeColor(this.themeColor)
     })
   }

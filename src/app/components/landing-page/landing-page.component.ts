@@ -2,6 +2,7 @@ import { AfterViewInit, Component, HostListener, OnDestroy, OnInit } from '@angu
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { environment } from 'src/environment/environment';
+import { SwiperOptions } from 'swiper';
 declare let $: any;
 @Component({
   selector: 'app-landing-page',

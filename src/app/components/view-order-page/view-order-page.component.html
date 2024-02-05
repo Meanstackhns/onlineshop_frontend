@@ -1,19 +1,38 @@
-<div class="desktop">
+<div class="desktop" *ngIf="!isMobileScreen">
     <div class="container-fluid">
         <div class="view-order-page">
             <div class="row header">
                 <div class="col-12">
-                    <nav class="container">
-                        <ul>
+                    <nav class="headerNav">
+                        <ul class="headerList">
+                            <li *ngFor="let i of foodNavbar" class="ps-3"><i [class]="i.icon+' '+'pe-2'"></i>{{i.name}}
+                            </li>
+                        </ul>
+                        <ul class="headerList">
+                            <ng-container *ngFor="let i of foodNavbar1">
+                                <li *ngFor="let j of i.list" class="pe-3 whyFood"><i
+                                        [class]="i.icon+' '+'pe-2'"></i>{{j}}
+                                </li>
+                                <li><i [class]="i.icon"></i><span class="pe-2 ps-2">{{i.name}}</span> <i
+                                        [class]="i.icon1"></i></li>
+                            </ng-container>
                         </ul>
                     </nav>
                 </div>
             </div>
-            <div class="row food-Navbar">
+            <div class="row food-logo-Navbar">
                 <div class="col-12 content">
-                    <nav class="container">
-                        <ul>
+                    <nav class="logo-navbar">
+                        <ul class="logo-list">
                             <li><img src="{{imgUrl}}/login/logo.png"></li>
+                            <li class="pt-4 ps-5"><input type="text" name="" id="inputPassword5"
+                                    class="search form-control" placeholder="Search from our HNS food products">
+                                <i class="fa-solid fa-magnifying-glass searchIcon"></i>
+                            </li>
+                        </ul>
+                        <ul class="Icon logo-list pe-4">
+                            <li class="pe-4"><i class="fa-regular fa-user userIcon"></i></li>
+                            <li><i class="fa-solid fa-cart-shopping userIcon cart"></i></li>
                         </ul>
                     </nav>
                 </div>
@@ -21,41 +40,136 @@
             <div class="row food-Menu">
                 <div class="col-12 content">
                     <nav class="container">
-                        <ul>
-                            <li *ngFor="let i of foodMenu"><i [class]="i.icon+' '+'me-2'"></i>{{i.name}}</li>
+                        <ul class="menuList">
+                            <li *ngFor="let i of foodMenu" (click)="selectFoodMenu(i)" [id]="i.id"><i
+                                    [class]="i.icon+' '+'me-2'"></i>{{i.name}}</li>
                         </ul>
                     </nav>
                 </div>
             </div>
-            <div class="row food-Navigation">
-                <div class="col-12">
-                    <ol class="breadcrumb container">
-                        <li class="breadcrumb-item">
-                            <span class="pe-3">Home <i class="fa-solid fa-chevron-right"></i></span>
-                            <span class="pe-3">Chicken <i class="fa-solid fa-chevron-right"></i></span>
-                            <span>Chicken Curry Cut (Skin Off) </span>
-                        </li>
-                    </ol>
+            <div class="food-lists pb-5">
+                <div class="row food-Navigation">
+                    <div class="col-12">
+                        <ol class="breadcrumb container">
+                            <li class="breadcrumb-item">
+                                <span class="pe-3">Home <i class="fa-solid fa-chevron-right"></i></span>
+                                <ng-container *ngFor="let j of foodList">
+                                    <span class="pe-3" *ngIf="j.foodMenuId == selectedMenu.id" (click)="goToViewPage()">{{j.menuName}}<i class="fa-solid fa-chevron-right"></i></span>
+                                    <span *ngIf="j.foodMenuId == selectedMenu.id">{{j.name}}</span>
+                                </ng-container>
+                            </li>
+                        </ol>
+                    </div>
                 </div>
-            </div>
-            <div class="row food-list">
-                <div class="container">
-                    <div class="col-6">
-                        <div class="main-image ">
-                            <div *ngFor="let i of foodList">
-                                <img src="{{imgUrl}}\view-order-page\{{i.image}}" alt="" class="img-fluid ">
-                                <p class="m-0"><strong>Customise your product</strong></p>
-                                <p class="rate m-0 pb-2">Starts from {{i.startRate | currency :'INR'}}</p>
-                                <div class="text-justify">
-                                    {{i.description}}
+                <div class="row food-list ">
+                    <div class="col-12">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6 col-sm-5 pb-3">
+                                    <div class="main-image" *ngFor="let i of foodList">
+                                        <ng-container *ngIf="i.foodMenuId == selectedMenu.id">
+                                            <img src="{{imgUrl}}\view-order-page\{{i.image}}" alt="" class="img-fluid ">
+                                            <strong>Customise your product</strong>
+                                            <p class="mb-1">
+                                                <span>Starts from {{i.startRate |currency:'INR'}}</span>
+                                            </p>
+                                            <div class="text-justify pe-4" style="text-align: justify!important;">
+                                                {{i.description}}</div>
+                                        </ng-container>
+                                    </div>
                                 </div>
+                                <ng-container *ngFor="let i of foodList">
+                                    <div class="col-6 col-sm-7" *ngIf="i.foodMenuId == selectedMenu.id">
+                                        <div class="mb-3">
+                                            <h1>{{i.name}}</h1>
+                                        </div>
+                                        <div class="row list-Detail">
+                                            <div *ngFor="let j of i.list" class="list-img-detail">
+                                                <div class="col-6">
+                                                    <img src="{{imgUrl}}\view-order-page\{{j.image}}" alt=""
+                                                        class="img-fluid ">
+                                                </div>
+                                                <div class="col-6 food-list-detail">
+                                                    {{j.name}}
+                                                    <div class="fw-bold piece">
+                                                        {{j.pieces}}
+                                                    </div>
+                                                    <div class="weight pt-3">
+                                                        <span><STRONG> Weight :</STRONG> {{j.weight}}</span>
+                                                    </div>
+                                                    <div class="price pt-3 d-flex">
+                                                        <p class="mb-0 pe-4">
+                                                            {{j.mrp |currency :'INR'}}
+                                                            <span class="ps-3">MRP</span>
+                                                        </p>
+                                                        <p class="mb-0">
+                                                            {{j.elite |currency :'INR'}}
+                                                            <span class="ps-3">ELITE</span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="add-to-cart pt-3">
+                                                        <button>Add to cart</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ng-container>
                             </div>
                         </div>
                     </div>
-                    <div class="col-6">
-                        <div class="list-image" *ngFor="let i of foodList">
-                            <div *ngFor="let j of i.list">
-                                <h1>{{i.name}}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mobile" *ngIf="isMobileScreen">
+    <div class="container-fluid">
+        <div class="row header" style="">
+            <div class="select-food col-12">
+                <div class="search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+        </div>
+        <div class="row view-order-list">
+            <div class="col-12 hold-detail" *ngFor="let i of foodList">
+                <div class="main-Image">
+                    <img src="{{imgUrl}}\view-order-page\{{i.image}}" alt="" class="img-fluid">
+                    <h1>{{i.name}}</h1>
+                    <div class="text-justify" [class.show]="show">{{i.description}}</div>
+                    <button (click)="show = !show" class="showDesc">{{ show ? 'read less': 'read more...' }}</button>
+                </div>
+                <div class="sub-detail">
+                    <p>Customise your cut</p>
+                    <div class="card" *ngFor="let j of i.list">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-xl-5 col-sm-4">
+                                    <img src="{{imgUrl}}/view-order-page/{{j.image}}" alt="" class="img-fluid">
+                                </div>
+                                <div class="col-xl-7 col-sm-8 food-details">
+                                    <span>{{j.name}} <span class="piece"> {{j.pieces}}</span></span>
+                                    <div class="weight">
+                                        <img src="{{imgUrl}}/view-order-page/i-weight.png" alt="" class="img-fluid">
+                                        <span class="ps-2">{{j.weight}}</span>
+                                    </div>
+                                    <div class="price-cart pt-2">
+                                        <div class="price  d-flex">
+                                            <p class="mb-0 pe-4">
+                                                {{j.mrp |currency :'INR'}}
+                                                <span class="">MRP</span>
+                                            </p>
+                                            <p class="mb-0">
+                                                {{j.elite |currency :'INR'}}
+                                                <span class="">ELITE</span>
+                                            </p>
+                                        </div>
+                                        <div class="add-to-cart">
+                                            <button class="rounded-pill">Add</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
